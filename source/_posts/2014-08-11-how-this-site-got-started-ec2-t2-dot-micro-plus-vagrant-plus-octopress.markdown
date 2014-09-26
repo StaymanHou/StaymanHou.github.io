@@ -3,7 +3,9 @@ layout: post
 title: "How this site got started: Setup EC2 (T2.micro) + Vagrant + Octopress (Ubuntu)"
 date: 2014-08-11 00:56:23 +0000
 comments: true
-categories: [AWS, EC2, Vagrant, OctoPress]
+categories: [AWS, EC2, Vagrant, OctoPress, Dev]
+keywords: "asw, ec2, vagrant, octopress, dev"
+description: "This is a post that describes the process of setting up a vagrant + ec2 environment for a octopress blog"
 ---
 Today, I decided to start making my own blog. The major reason is that I can't find enough blogs talking about Chef. This makes things perticularly difficult when I started working on Chef. Not to mention blogs in Chinese. Therefore, I wanna record what I learned, and share it with the IT folk in the world. I will write both in English & Chinese. Hopefully it could help the IT guys in China.
 
@@ -42,7 +44,7 @@ Lets initiate the box with the basic ubuntu image. 我们用basic ubuntu镜像�
 
 Add the basic image to your local boxes. In my case, I chose 14.04 x64. You can use any version & architecture you want. Remember to change the box name and the url accordingly. You are able to find all the available ubuntu images [here](https://cloud-images.ubuntu.com/vagrant) 先把这个镜像加载到你的本地上。我用的是14.04 x64。你可以根据你的情况选择不同的ubuntu版本和架构。根据情况修改加载box的名字和url。在[这里](https://cloud-images.ubuntu.com/vagrant)可以找到可用的镜像
 {% codeblock lang:bash %}
-$ box add ubuntu/trusty64 https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+$ vagrant box add ubuntu/trusty64 https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
 {% endcodeblock %}
 Go to your vagrant box directory and initiate it. `cd`到刚才vagrant文件夹里面，然后初始化。
 {% codeblock lang:bash %}
