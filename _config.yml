@@ -99,3 +99,7 @@ google_analytics_tracking_id: UA-53641328-1
 
 # Facebook Like
 facebook_like: false
+
+# New Relic Browser
+new_relic_license_key: 0c8384869e
+new_relic_application_id: 4027352

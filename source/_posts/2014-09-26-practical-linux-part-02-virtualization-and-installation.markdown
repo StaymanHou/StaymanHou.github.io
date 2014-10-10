@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Practical Linux - Part 02 - Virtualization &amp; Installation Linux实践教程 - Part 02 - 虚拟化与安装"
+title: "Practical Linux - Part 02 - Virtualization &amp; Installation | Linux实践教程 - Part 02 - 虚拟化与安装"
 date: 2014-09-26 02:24:05 +0000
 comments: true
 categories: [Linux]
