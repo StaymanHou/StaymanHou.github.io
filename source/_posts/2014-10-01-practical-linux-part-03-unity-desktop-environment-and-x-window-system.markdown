@@ -7,7 +7,7 @@ categories: [Linux]
 keywords: "linux, unity, x window system, tutorial"
 ---
 {% youtube QHf-EhwCpc8 %}
-
+<!-- more -->
 - Sep 30 - Unity (Desktop Environment) & X Window System
   - Windows
     - Left VS Right

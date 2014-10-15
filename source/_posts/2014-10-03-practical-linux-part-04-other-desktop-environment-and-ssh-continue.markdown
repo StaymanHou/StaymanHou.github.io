@@ -7,7 +7,7 @@ categories: [Linux]
 keywords: "linux, desktop environment, de, turorial, ssh"
 ---
 {% youtube r_s8O0GtEHc %}
-
+<!-- more -->
 - Oct 2 - Other Desktop Environment & SSH (Continue)
   - Other Desktop Environment
     - askubuntu.com/questions/65083/what-kinds-of-desktop-environments-and-shells-are-available

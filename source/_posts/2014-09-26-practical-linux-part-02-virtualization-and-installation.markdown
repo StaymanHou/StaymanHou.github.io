@@ -7,7 +7,7 @@ categories: [Linux]
 keywords: "linux, virtualization, installation, tutorial"
 ---
 {% youtube qT9Jord4a7s %}
-
+<!-- more -->
 - Virtualization & Installation
   - Virtualization
     - en.wikipedia.org/wiki/Virtualization
