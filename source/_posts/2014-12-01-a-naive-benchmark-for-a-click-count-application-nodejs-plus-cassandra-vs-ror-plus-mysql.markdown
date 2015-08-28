@@ -135,3 +135,7 @@ This benchmark is very naive. The following points can be improved in the future
 __the two links above are really conflicting__
 * [Rails VS NodeJS](http://robbinfan.com/blog/40/ruby-off-rails) __nodejs的吞吐量貌似没有它说的那么牛，但是他对rails的优势劣势分析得还是挺中肯的__
 * [Web App Framework Benchmarks](http://www.techempower.com/benchmarks/)
+* [Cassandra](http://cassandra.apache.org)
+* [NodeJS](http://nodejs.org)
+* [Express](http://expressjs.com)
+* [Node Cassandra Driver](https://github.com/datastax/nodejs-driver)
