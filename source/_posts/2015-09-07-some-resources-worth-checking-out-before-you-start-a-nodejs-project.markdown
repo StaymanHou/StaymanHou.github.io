@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "Some resources worth checking out before you start a NodeJS project"
+title: "Some resources worth checking out before you start a NodeJS project - Part 1"
 date: 2015-09-07 00:18:46 +0000
 comments: true
-categories: [Post]
 keywords: "nodejs, dynamodb, cloudsearch, natural language process"
 ---
+[Part 2 is here]({% post_url 2015-09-13-some-resources-worth-checking-out-before-you-start-a-nodejs-project-part-2 %})
+
 Last week I rushed through a nodejs project. It's my first nodejs project that launched in production. Learned a lot about nodejs and got a deeper grasp about it. Wanna share about my experience and my understanding so far in this post. I'm also gonna list a bunch of resources that I went through and feel worth reading.
 
 First of all, to get started with JavaScript, I'd recommend read the book [JavaScript: The Definitive Guide](http://www.amazon.com/JavaScript-Definitive-Guide-David-Flanagan/dp/0596000480). I think it can both serve as a beginner tutorial and a advanced guide. It basically covers everything about the language. From lex, syntax, to the underlying concept and mechanism. I, indeed, agree that JS is a horribly designed language. It's easy to start writing some functioning program without a good understanding. However, it's quite tricky for beginners to comprehend how the language actually works. This book even worths reading a second time. Propably write a good amount of JS code before start the second read.
