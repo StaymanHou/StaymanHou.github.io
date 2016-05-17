@@ -1,0 +1,1058 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How This Site Got Started: Setup EC2 (T2.micro) + Vagrant + Octopress (Ubuntu) - Stayman's Blog</title>
+  <meta name="author" content="Stayman Hou 侯越辰">
+
+  
+  <meta name="description" content="This is a post that describes the process of setting up a vagrant + ec2 environment for a octopress blog">
+  <meta name="keywords" content="asw, ec2, vagrant, octopress, dev">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://StaymanHou.github.io/blog/2014/08/10/how-this-site-got-started-ec2-t2-dot-micro-plus-vagrant-plus-octopress">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Stayman's Blog" type="application/atom+xml">
+  
+  <script type="text/javascript">
+  window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(5),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(f){"stack"in f&&(t(1),t(4),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:8,2:5,3:9,4:7,5:20,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(2);t("loader").features.stn=!0,t(1),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:6,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:20,2:21,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:21,2:20,ee:"QJf3ax"}],7:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:21,2:20,ee:"QJf3ax"}],8:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:21,2:20,ee:"QJf3ax"}],9:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),f=s(a),u=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new u(t);try{i.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=u.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:5,2:21,ee:"QJf3ax"}],10:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:11,3:9,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],11:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,f="addEventListener",u="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[f]?(c[f]("DOMContentLoaded",o,!1),s[f]("load",n,!1)):(c[u]("onreadystatechange",r),s[u]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],20:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],21:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:20,ee:"QJf3ax"}]},{},["G9z0Bl",3,10,4]);
+  ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"0c8384869e",applicationID:"4027352",sa:1,agent:"js-agent.newrelic.com/nr-476.min.js"}
+  </script>
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53641328-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Stayman's Blog</a></h1>
+  
+    <h2>A blog belongs to a DevSecOps consultant, hacker, and entrepreneur.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:StaymanHou.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How This Site Got Started: Setup EC2 (T2.micro) + Vagrant + Octopress (Ubuntu)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-10T20:56:23-04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Today, I decided to start making my own blog. The major reason is that I can&rsquo;t find enough blogs talking about Chef. This makes things perticularly difficult when I started working on Chef. Not to mention blogs in Chinese. Therefore, I wanna record what I learned, and share it with the IT folk in the world. I will write both in English &amp; Chinese. Hopefully it could help the IT guys in China.</p>
+
+<p>This post describes how I built the dev environment and the server stack of this blog.</p>
+
+<p>The reasons why I chose EC2 + Vagrant + Octopress are that:
+1) EC2: flexibility + 1 year free tier
+2) Vagrant: easy-to-launch virtual environment + sync folder setting = fast start + favorite editor + no messing up my local env
+3) OctoPress: IT-guys-oriented + everything static (no php, etc.) good for performance</p>
+
+<p>今天决定要作个人博客。因为最近在做关于Chef的东西，网上很难找到相关的资料，所以chef做起来就异常艰难。更不用说什么中文的博客了。这个是主要原因。所以希望能够把我摸索出来的东西记录下来，分享给其他作IT的人。特别希望这个能帮助到中国的IT人。</p>
+
+<p>这篇博客是关于我怎么搭建这个blog的开发环境和服务器stack的部署。</p>
+
+<p>我用了 EC2 + Vagrant + Octopress，原因是:
+1) EC2: 灵活性 + 一年免费
+2) Vagrant: 最方便启用的虚拟环境 + 同步文件夹设定 = 立马开始 + 可以用最爱的编辑器 + 不会搞乱本地环境
+3) OctoPress: IT人专用的blog + 纯静态 （不跑php等脚本) 性能好</p>
+
+<!-- more -->
+
+
+<h1>Part 1: Vagrant 第一部分： Vagrant</h1>
+
+<p>To be honest, Vagrant is pretty optional. Octopress comes with a local dev environment. However, I still prefer to have a dev box so that ruby, gem, bundle will not mess up my laptop. Vagrant is the perfect environment I want. To get started:</p>
+
+<p>说实话，Vagrant是可以不用搭的。Octopress自带了一个简单的本地开发环境。不过我个人还是喜欢用一个独立的box来开发。因为ruby, gem, bundle很容易把我笔记本的环境搞得一团糟。所以Vagrant就正中我下怀了。那么我们开始吧。</p>
+
+<p>First of all, my laptop is running Ubuntu 14.04. 事先声明，我的本子跑的是Ubuntu 14.04。</p>
+
+<p>Open <em>Ubuntu Software Center</em>. Search for <em>VirtualBox</em> and <em>Vagrant</em>. Install them. 打开<em>Ubuntu Software Center</em>，搜索<em>VirtualBox</em>和<em>Vagrant</em>，安装。</p>
+
+<p>Now, we are ready to launch vagrant box. Lets first setup a directory to contain the vagrant box config files. 现在vagrant就可以跑了。 先新建一个文件夹用来保存vagrant的配置文件<code>Vagrantfile</code></p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>mkdir -p ~/vagrant/octopress
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Lets initiate the box with the basic ubuntu image. 我们用basic ubuntu镜像来初始化这个vagrant box</p>
+
+<p>Add the basic image to your local boxes. In my case, I chose 14.04 x64. You can use any version &amp; architecture you want. Remember to change the box name and the url accordingly. You are able to find all the available ubuntu images <a href="https://cloud-images.ubuntu.com/vagrant">here</a> 先把这个镜像加载到你的本地上。我用的是14.04 x64。你可以根据你的情况选择不同的ubuntu版本和架构。根据情况修改加载box的名字和url。在<a href="https://cloud-images.ubuntu.com/vagrant">这里</a>可以找到可用的镜像</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vagrant box add ubuntu/trusty64 https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Go to your vagrant box directory and initiate it. <code>cd</code>到刚才vagrant文件夹里面，然后初始化。</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/vagrant/octopress
+</span><span class='line'><span class="nv">$ </span>vagrant init ubuntu/trusty64
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Find out these two lines in the default <code>~/vagrant/octopress/Vagrantfile</code> and replace the value. In my case: 在<code>Vagrantfile</code>里面找到这两行，然后改成如下所示：</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">[.</span><span class="n">.</span><span class="o">.]</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="ss">:private_network</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&quot;192.168.33.101&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">[.</span><span class="n">.</span><span class="o">.]</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">synced_folder</span> <span class="s2">&quot;~/Personal/blog.staymanhou.com&quot;</span><span class="p">,</span> <span class="s2">&quot;/data/blog.staymanhou.com&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">[.</span><span class="n">.</span><span class="o">.]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>The attribute <code>config.vm.synced_folder</code> will sync the directory <code>~/Personal/blog.staymanhou.com</code> on my host machine with the <code>/data/blog.staymanhou.com</code>. You could think them are some sort of shared folder. Therefore, <code>~/Personal/blog.staymanhou.com</code> will be the diretory that contain my blog source code. 这样的话，两个文件夹：在你机子上的<code>~/Personal/blog.staymanhou.com</code>和你vagrant虚拟机里的<code>/data/blog.staymanhou.com</code>就同步了. 可以把他们想成是共享文件夹。所以以后直接编辑<code>~/Personal/blog.staymanhou.com</code>，你虚拟机里的文件也就跟着改了</p>
+
+<p>We can boot the box now. In your <code>~/vagrant/octopress</code> directory. 初始化号以后我们就可以启动这个vagrant虚拟机了</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vagrant up
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>After the box is up, run the following command to ssh into the box. 虚拟机启动好以后下面的指令</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vagrant ssh
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>We are now inside of the running box! 这样我们就进到虚拟机啦！是不是很简单呀</p>
+
+<p>Lets setup the web server stack in this box. Then it will be turned into your dev environment. 让我们在新的虚拟机上设置网站服务栈吧。之后这个就成为你的开发环境咯。</p>
+
+<p>Always update the package info first. 永远是先更新所有包的信息</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Install <code>rvm</code> - ruby version manager 安装<code>rvm</code></p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>curl -sSL https://get.rvm.io <span class="p">|</span> bash -s stable
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>And followed by: 然后</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">source</span> ~/.rvm/scripts/rvm
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Install <code>ruby 2.1.2</code> with <code>rvm</code>: 用<code>rvm</code>安装<code>ruby 2.1.2</code></p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rvm install 2.1.2
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Install <code>bundler</code> 安装<code>bundler</code></p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>gem install bundler
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Ruby is now ready. ruby环境就搭好了</p>
+
+<p>We will also need a js engine for javascript runtime. This will be used by octopress later. 另外我们还需要一个javascript runtime引擎，一会儿octopress会用上它</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get install nodejs
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>And the most important - <strong><code>Nginx</code></strong> 以及最要紧的<strong><code>Nginx</code></strong></p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get install nginx
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get install nginx
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>After install nginx, lets make the config file for your site. 安装完成之后，来做配置文件</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vi /etc/nginx/sites-available/blog.staymanhou.com
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Put the following content in the the available site config file. Change the domain name accordingly. 把下面的内容放进去，把域名换成你自己的</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='nginx'><span class='line'><span class="k">server</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">### This setting tells Nginx to use this configuration if it gets a request for</span>
+</span><span class='line'>  <span class="c1">### yourblog.com</span>
+</span><span class='line'>  <span class="kn">server_name</span> <span class="s">blog.staymanhou.com</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">### This is the location on the web server where your Octopress files are</span>
+</span><span class='line'>  <span class="c1">### published. Setting this here means you don&#39;t have to set it for any of the</span>
+</span><span class='line'>  <span class="c1">### individual locations you define below.</span>
+</span><span class='line'>  <span class="kn">root</span> <span class="s">/data/blog.staymanhou.com/public</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">### This tells Nginx to use &quot;index.html&quot; as the default index page everywhere</span>
+</span><span class='line'>  <span class="kn">index</span> <span class="s">index.html</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">### This disables automatic directory index creation, since no one will be</span>
+</span><span class='line'>  <span class="c1">### browsing your directories anyway</span>
+</span><span class='line'>  <span class="kn">autoindex</span> <span class="no">off</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri/</span> <span class="p">=</span><span class="mi">404</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kn">location</span> <span class="p">~</span> <span class="sr">/\.</span> <span class="p">{</span> <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span> <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span> <span class="kn">deny</span> <span class="s">all</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="kn">location</span> <span class="p">~</span> <span class="sr">~$</span> <span class="p">{</span> <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span> <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span> <span class="kn">deny</span> <span class="s">all</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="kn">location</span> <span class="p">=</span> <span class="s">/robots.txt</span> <span class="p">{</span> <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span> <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="kn">location</span> <span class="p">=</span> <span class="s">/favicon.ico</span> <span class="p">{</span> <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span> <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Great! the setup in the box is done. The web server will serve the documents in <code>/data/blog.staymanhou.com/public</code> directory. Don&rsquo;t worry, the directory doesn&rsquo;t exist now. And therefore, nginx will give you 404 not found or 403 forbidden. We will get it to work soon. Exit the vagrant box by hitting <code>Ctrl + D</code>. Halt the box by running: 好，到此为止，vagrant的配置就搞定了，访问的时候它会伺服<code>/data/blog.staymanhou.com/public</code>的内容。当然现在可能会告诉你 403或者404，莫慌，跑完下面的配置，它就该正常工作了。按<code>Ctrl + D</code>从vagrant虚拟机里面跳出来，然后终止它。</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vagrant halt
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<h1>Part 2: OctoPress 第二部分： OctoPress</h1>
+
+<p>Ok, now, fork and clone the <a href="https://github.com/imathis/octopress">OctoPress</a> repo into your github and local machine. 现在把<a href="https://github.com/imathis/octopress">OctoPress</a>给fork到你自己的github，再clone到本地</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/Personal/blog.staymanhou.com
+</span><span class='line'><span class="nv">$ </span>git clone &lt;your octopress repo uri&gt; .
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>You can now edit the code with your favorate text editor. My favorate is Sublime Text. If you haven&rsquo;t tried it, give it a shot. 这样你就可以用自己最顺手的编辑器编辑了，我喜欢Sublime Text。没试过的话，建议尝试</p>
+
+<p>Let&rsquo;s go back into the vagrant box. 现在回到vagrant虚拟机</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> ~/vagrant/octopress
+</span><span class='line'><span class="nv">$ </span>vagrant up
+</span><span class='line'><span class="nv">$ </span>vagrant ssh
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>You will find that the newly clone code is also in the directory <code>/data/blog.staymanhou.com</code>. It is because we have configured vagrant to sync it. Inside the box: 你会发现刚clone来的代码已经在<code>/data/blog.staymanhou.com</code>里了。因为我们刚才设置了同步文件。在vagrant里面跑这个</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">cd</span> /data/blog.staymanhou.com
+</span><span class='line'><span class="nv">$ </span>bundle install
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>This will install all the gems that are required by OctoPress. 这个会把所有需要的gem都安装好
+Running next command to generate the pages of your blog. 跑下面这个指令，博客的页面就生成啦</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake generate
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Now, your blog is up and running in your dev box.
+To take a look at it. Go back to your local machine by fire up a new terminal. Add the new line <code>192.168.33.101 blog.staymanhou.com</code> in your hosts file. 现在，你的博客已经在开发环境下跑起来了。想先看一眼？回到本机。加一行<code>192.168.33.101 blog.staymanhou.com</code>到你的hosts文件</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">echo</span> <span class="s1">&#39;192.168.33.101 blog.staymanhou.com&#39;</span> &gt;&gt; /etc/hosts
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>I manage my hosts file with a firefox adon <code>HostAdmin</code>. Give it a shot. 我比较喜欢用一个叫<code>HostAdmin</code>的firefox插件来管理我的hosts文件
+Now, if we enter <code>blog.staymanhou.com</code> in a browser, we will be able to view your blog! You can modify the <code>_config.yml</code> to do some basic customization. Here is my <code>_config.yml</code>: 现在在浏览器里面输入<code>blog.staymanhou.com</code>就可以看到网站拉。通过修改<code>_config.yml</code>，你可以做一些自定义的设置。这个是我的：</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>_config.yml </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="c1"># ----------------------- #</span>
+</span><span class='line'><span class="c1">#      Main Configs       #</span>
+</span><span class='line'><span class="c1"># ----------------------- #</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://blog.staymanhou.com</span>
+</span><span class='line'><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Stayman&#39;s Blog</span>
+</span><span class='line'><span class="l-Scalar-Plain">subtitle</span><span class="p-Indicator">:</span> <span class="s">&#39;A</span><span class="nv"> </span><span class="s">blog</span><span class="nv"> </span><span class="s">belongs</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">system</span><span class="nv"> </span><span class="s">admin</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">hacker.&#39;</span>
+</span><span class='line'><span class="l-Scalar-Plain">author</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Stayman Hou 侯越辰</span>
+</span><span class='line'><span class="l-Scalar-Plain">simple_search</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">https://www.google.com/search</span>
+</span><span class='line'><span class="l-Scalar-Plain">description</span><span class="p-Indicator">:</span> <span class="s">&quot;This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">Stayman&#39;s</span><span class="nv"> </span><span class="s">blog.</span><span class="nv"> </span><span class="s">Stayman</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">Christian.</span><span class="nv"> </span><span class="s">He</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">experience</span><span class="nv"> </span><span class="s">over</span><span class="nv"> </span><span class="s">system</span><span class="nv"> </span><span class="s">administration.</span><span class="nv"> </span><span class="s">Have</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">hacking</span><span class="nv"> </span><span class="s">skills.</span><span class="nv"> </span><span class="s">This</span><span class="nv"> </span><span class="s">blog</span><span class="nv"> </span><span class="s">covers</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">following</span><span class="nv"> </span><span class="s">topics:</span><span class="nv"> </span><span class="s">IT,</span><span class="nv"> </span><span class="s">server,</span><span class="nv"> </span><span class="s">Linux,</span><span class="nv"> </span><span class="s">dev,</span><span class="nv"> </span><span class="s">personal</span><span class="nv"> </span><span class="s">life,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Christianity.</span><span class="nv"> </span><span class="s">You</span><span class="nv"> </span><span class="s">could</span><span class="nv"> </span><span class="s">find</span><span class="nv"> </span><span class="s">helpful</span><span class="nv"> </span><span class="s">thing</span><span class="nv"> </span><span class="s">here,</span><span class="nv"> </span><span class="s">either</span><span class="nv"> </span><span class="s">technique-related</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">life-related.</span><span class="nv"> </span><span class="s">侯越辰的博客。基督徒，系统维护，hacking。包括一下的话题：信息技术，服务器，Linux，开发，个人生活，基督教。希望你可以在这里得到技术和人生上的帮助。&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Default date format is &quot;ordinal&quot; (resulting in &quot;July 22nd 2007&quot;)</span>
+</span><span class='line'><span class="c1"># You can customize the format as defined in</span>
+</span><span class='line'><span class="c1"># http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime</span>
+</span><span class='line'><span class="c1"># Additionally, %o will give you the ordinal representation of the day</span>
+</span><span class='line'><span class="l-Scalar-Plain">date_format</span><span class="p-Indicator">:</span> <span class="s">&quot;ordinal&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># RSS / Email (optional) subscription links (change if using something like Feedburner)</span>
+</span><span class='line'><span class="l-Scalar-Plain">subscribe_rss</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/atom.xml</span>
+</span><span class='line'><span class="l-Scalar-Plain">subscribe_email</span><span class="p-Indicator">:</span>
+</span><span class='line'><span class="c1"># RSS feeds can list your email address if you like</span>
+</span><span class='line'><span class="l-Scalar-Plain">email</span><span class="p-Indicator">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># ----------------------- #</span>
+</span><span class='line'><span class="c1">#    Jekyll &amp; Plugins     #</span>
+</span><span class='line'><span class="c1"># ----------------------- #</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># If publishing to a subdirectory as in http://site.com/project set &#39;root: /project&#39;</span>
+</span><span class='line'><span class="l-Scalar-Plain">root</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/</span>
+</span><span class='line'><span class="l-Scalar-Plain">permalink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/blog/:year/:month/:day/:title/</span>
+</span><span class='line'><span class="l-Scalar-Plain">source</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">source</span>
+</span><span class='line'><span class="l-Scalar-Plain">destination</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">public</span>
+</span><span class='line'><span class="l-Scalar-Plain">plugins</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">plugins</span>
+</span><span class='line'><span class="l-Scalar-Plain">code_dir</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">downloads/code</span>
+</span><span class='line'><span class="l-Scalar-Plain">category_dir</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">blog/categories</span>
+</span><span class='line'><span class="l-Scalar-Plain">markdown</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">rdiscount</span>
+</span><span class='line'><span class="l-Scalar-Plain">rdiscount</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">autolink</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">footnotes</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">smart</span>
+</span><span class='line'><span class="l-Scalar-Plain">highlighter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">pygments</span> <span class="c1"># default python pygments have been replaced by pygments.rb</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">paginate</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">10</span>          <span class="c1"># Posts per page on the blog index</span>
+</span><span class='line'><span class="l-Scalar-Plain">paginate_path</span><span class="p-Indicator">:</span> <span class="s">&quot;posts/:num&quot;</span>  <span class="c1"># Directory base for pagination URLs eg. /posts/2/</span>
+</span><span class='line'><span class="l-Scalar-Plain">recent_posts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">5</span>       <span class="c1"># Posts in the sidebar Recent Posts section</span>
+</span><span class='line'><span class="l-Scalar-Plain">excerpt_link</span><span class="p-Indicator">:</span> <span class="s">&quot;Read</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">&amp;rarr;&quot;</span>  <span class="c1"># &quot;Continue reading&quot; link text at the bottom of excerpted articles</span>
+</span><span class='line'><span class="l-Scalar-Plain">excerpt_separator</span><span class="p-Indicator">:</span> <span class="s">&quot;&amp;lt;!--more--&amp;gt;&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">titlecase</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>       <span class="c1"># Converts page and post titles to titlecase</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># list each of the sidebar modules you want to include, in the order you want them to appear.</span>
+</span><span class='line'><span class="c1"># To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like &#39;custom/asides/custom_aside_name.html&#39;</span>
+</span><span class='line'><span class="l-Scalar-Plain">default_asides</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="nv">asides/recent_posts.html</span><span class="p-Indicator">,</span> <span class="nv">asides/googleplus.html</span><span class="p-Indicator">,</span> <span class="nv">asides/github.html</span><span class="p-Indicator">]</span> <span class="c1">#, asides/delicious.html, asides/pinboard.html</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below</span>
+</span><span class='line'><span class="c1"># and add an array with the asides you want to use.</span>
+</span><span class='line'><span class="c1"># blog_index_asides:</span>
+</span><span class='line'><span class="c1"># post_asides:</span>
+</span><span class='line'><span class="c1"># page_asides:</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># ----------------------- #</span>
+</span><span class='line'><span class="c1">#   3rd Party Settings    #</span>
+</span><span class='line'><span class="c1"># ----------------------- #</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Github repositories</span>
+</span><span class='line'><span class="l-Scalar-Plain">github_user</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">StaymanHou</span>
+</span><span class='line'><span class="l-Scalar-Plain">github_repo_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">10</span>
+</span><span class='line'><span class="l-Scalar-Plain">github_show_profile_link</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+</span><span class='line'><span class="l-Scalar-Plain">github_skip_forks</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Twitter</span>
+</span><span class='line'><span class="l-Scalar-Plain">twitter_user</span><span class="p-Indicator">:</span>
+</span><span class='line'><span class="l-Scalar-Plain">twitter_tweet_button</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Google +1</span>
+</span><span class='line'><span class="l-Scalar-Plain">google_plus_one</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+</span><span class='line'><span class="l-Scalar-Plain">google_plus_one_size</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">medium</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Google Plus Profile</span>
+</span><span class='line'><span class="c1"># Hidden: No visible button, just add author information to search results</span>
+</span><span class='line'><span class="l-Scalar-Plain">googleplus_user</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">111718847796837023988</span>
+</span><span class='line'><span class="l-Scalar-Plain">googleplus_hidden</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Pinboard</span>
+</span><span class='line'><span class="l-Scalar-Plain">pinboard_user</span><span class="p-Indicator">:</span>
+</span><span class='line'><span class="l-Scalar-Plain">pinboard_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">3</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Delicious</span>
+</span><span class='line'><span class="l-Scalar-Plain">delicious_user</span><span class="p-Indicator">:</span>
+</span><span class='line'><span class="l-Scalar-Plain">delicious_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">3</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Disqus Comments</span>
+</span><span class='line'><span class="l-Scalar-Plain">disqus_short_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">staymansblog</span>
+</span><span class='line'><span class="l-Scalar-Plain">disqus_show_comment_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Google Analytics</span>
+</span><span class='line'><span class="l-Scalar-Plain">google_analytics_tracking_id</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">UA-53641328-1</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Facebook Like</span>
+</span><span class='line'><span class="l-Scalar-Plain">facebook_like</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<h1>Part 3: EC2 (Server Stack Setup) 第三部分： EC2 (服务栈设置)</h1>
+
+<p>Here is the most exciting part. We will soon make your blog publicly available. 这里就是最精彩的部分了，马上我们的博客就要真实上线了</p>
+
+<p>Launch a T2.micro instance. In my case, I want to use two EBS volumes. One for system, the other for site data. Lets allocate 15GB for each volume. Attache them as /dev/xvda and /dev/xvdb. 新建一个T2.micro instance。我的话，想要用两个EBS卷，一个用来放系统，一个用来放网站的东西。我各配了15G，分别作为/dev/xvda和/dev/xvdb连接上去</p>
+
+<p>Use the command <code>lsblk</code> to verify the volumes that you attached. 用<code>lsblk</code>指令确认一下卷都对得上号儿</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>lsblk
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>/dev/xvdb is probably now a raw block without any file system. Let&rsquo;s format the volumes into ext4. If you have no idea what this is about, just follow it. /dev/xvdb现在很可能是个裸块儿，还没有文件系统，我们把它格式化一下。如果你不太明白的话，跑这个指令就行了</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo mkfs -t ext4 /dev/xvdb
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>The formating process may take a while. After that, let&rsquo;s mount the formated sf on to <code>/data</code> directory. This is gonna be the place where we will put your site files. 格式化可能会用一些时间，完了之后我们把这个文件系统挂载到<code>/data</code>这个文件夹上面，这个路径之后就是我们放网站文件的地方</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo mkdir /data
+</span><span class='line'><span class="nv">$ </span>sudo mount /dev/xvdb /data
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>To make your second volume always available after reboot, edit the <code>/etc/fstab</code> file 为了让它每次重启之后都自己会挂载，我们要编辑<code>/etc/fstab</code>文件</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo vi /etc/fstab
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>And add this line 里面加上这一行</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/etc/fstab </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/dev/xvdb /data ext4  defaults,nofail 0 2</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Test if the new config takes place 测试一下好不好使</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo mount -a
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Create a new user for the site files only. That meets the principle of least privilege. 新建一个用户，专门作为网站文件的owner，这个是最小权限原则</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo adduser bloguser --disabled-password
+</span><span class='line'><span class="nv">$ </span>sudo mkdir -R /data/www/staymanhou.com/blog
+</span><span class='line'><span class="nv">$ </span>sudo chown bloguser:bloguser /data/www/staymanhou.com/blog
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Lets install <code>Nginx</code>. 安装<code>Nginx</code></p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo apt-get update
+</span><span class='line'><span class="nv">$ </span>sudo apt-get install nginx
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>And then create common.conf and the site config. This will make your available both through http and https. Probably you don&rsquo;t want https, feel free to comment it out. 然后写入common.conf和网站配置文件。这个例子里面会网站同时跑http和https，你多半不需要https，可以注释掉</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo vi /etc/nginx/common.conf
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/etc/nginx/common.conf </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='nginx'><span class='line'><span class="c1">### This file contains common configuration and location directives for the</span>
+</span><span class='line'><span class="c1">### HTTP and HTTPS versions of my Octopress blog</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">### Common root location</span>
+</span><span class='line'>  <span class="k">location</span> <span class="s">/</span> <span class="p">{</span>
+</span><span class='line'>      <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri/</span> <span class="p">=</span><span class="mi">404</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">### Common deny, drop, or internal locations</span>
+</span><span class='line'>  <span class="k">location</span> <span class="p">~</span> <span class="sr">/\.</span> <span class="p">{</span> <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span> <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span> <span class="kn">deny</span> <span class="s">all</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">location</span> <span class="p">~</span> <span class="sr">~$</span> <span class="p">{</span> <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span> <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span> <span class="kn">deny</span> <span class="s">all</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">location</span> <span class="p">=</span> <span class="s">/robots.txt</span> <span class="p">{</span> <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span> <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">location</span> <span class="p">=</span> <span class="s">/favicon.ico</span> <span class="p">{</span> <span class="kn">access_log</span> <span class="no">off</span><span class="p">;</span> <span class="kn">log_not_found</span> <span class="no">off</span><span class="p">;</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>vi /etc/nginx/sites-enabled/blog.staymanhou.com
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/etc/nginx/sites-enabled/blog.staymanhou.com </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class='nginx'><span class='line'><span class="c1">### The first server block is the HTTP server</span>
+</span><span class='line'><span class="k">server</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kn">server_name</span> <span class="s">blog.staymanhou.com</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">root</span> <span class="s">/data/www/staymanhou.com/blog</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">index</span> <span class="s">index.html</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">autoindex</span> <span class="no">off</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">### And now, rather than list a bunch of locations here, we just tell Nginx to</span>
+</span><span class='line'>  <span class="c1">### go find the &quot;common.conf&quot; file and read that instead. We&#39;re going to add</span>
+</span><span class='line'>  <span class="c1">### stuff into common.conf in just a sec.</span>
+</span><span class='line'>  <span class="kn">include</span> <span class="s">common.conf</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">### The second server block is the HTTPS server, which has the &quot;listen 443&quot;</span>
+</span><span class='line'><span class="c1">### line to tell Nginx that traffic for it will come on TCP port 443. The</span>
+</span><span class='line'><span class="c1">### HTTP server above doesn&#39;t have a &quot;listen 80&quot; line because when the &quot;listen&quot;</span>
+</span><span class='line'><span class="c1">### directive is omitted, &quot;listen 80&quot; is implied.</span>
+</span><span class='line'><span class="k">server</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kn">server_name</span> <span class="s">blog.staymanhou.com</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">root</span> <span class="s">/data/www/staymanhou.com/blog</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">listen</span> <span class="mi">443</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">index</span> <span class="s">index.html</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">autoindex</span> <span class="no">off</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">include</span> <span class="s">common.conf</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">### The next set of directives tells Nginx that this server uses SSL, and then</span>
+</span><span class='line'><span class="c1">### supplies it with the configuration settings necessary to make SSL work</span>
+</span><span class='line'>  <span class="kn">ssl</span> <span class="no">on</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">ssl_certificate</span> <span class="s">/etc/nginx/ssl/blog.staymanhou.com.crt</span><span class="p">;</span>
+</span><span class='line'>  <span class="kn">ssl_certificate_key</span> <span class="s">/etc/nginx/ssl/blog.staymanhou.com.key</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Make the site enabled by add a soft link in the <code>sites-enabled</code> directory. And then restart nginx to apply it. 用软联启用网站的配置。然后重启nginx</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo ln -s /etc/nginx/sites-available/blog.staymanhou.com /etc/nginx/sites-enabled/blog.staymanhou.com
+</span><span class='line'><span class="nv">$ </span>sudo /etc/init.d/nginx restart
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Last step. Enable your vagrant box to deploy your blog onto your by adding you vagrant box ssh public key.
+In your vagrant box. <code>cat</code> your public key as user <code>vagrant</code>. 最后一步，让你的vagrant虚拟机可以把你的博客部署到EC2上。看一下你<code>vagrant</code>用户的公钥</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>cat ~/.ssh/id_rsa.pub
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>In the EC2 instance. Open the <code>authorized_keys</code> file for user <code>bloguser</code>, and add you vagrant box ssh prublic key in it. 在你的EC2 instance里面把这个公钥加入<code>authorized_keys</code></p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo su bloguser
+</span><span class='line'><span class="nv">$ </span>mkdir .ssh
+</span><span class='line'><span class="nv">$ </span>cat <span class="s1">&#39;yoursshpublickeyhere&#39;</span> &gt; authorized_keys
+</span><span class='line'><span class="nv">$ </span>chmod <span class="m">700</span> .ssh
+</span><span class='line'><span class="nv">$ </span>chmod <span class="m">600</span> .ssh/authorized_keys
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Open the Rakefile of the blog with your favorite editor. Edit the <code>Rsync Deploy config</code> to match the configuration on your EC2 instance. 打开你博客的Rakefile，找到<code>Rsync Deploy config</code>这个部分，根据情况改，一下参考</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Rakefile </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">[.</span><span class="n">.</span><span class="o">.]</span>
+</span><span class='line'><span class="c1">## -- Rsync Deploy config -- ##</span>
+</span><span class='line'><span class="c1"># Be sure your public key is listed in your server&#39;s ~/.ssh/authorized_keys file</span>
+</span><span class='line'><span class="n">ssh_user</span>       <span class="o">=</span> <span class="s2">&quot;bloguser@blog.staymanhou.com&quot;</span>
+</span><span class='line'><span class="n">ssh_port</span>       <span class="o">=</span> <span class="s2">&quot;22&quot;</span>
+</span><span class='line'><span class="n">document_root</span>  <span class="o">=</span> <span class="s2">&quot;/data/www/staymanhou.com/blog&quot;</span>
+</span><span class='line'><span class="n">rsync_delete</span>   <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'><span class="n">rsync_args</span>     <span class="o">=</span> <span class="s2">&quot;&quot;</span>  <span class="c1"># Any extra arguments to pass to rsync</span>
+</span><span class='line'><span class="n">deploy_default</span> <span class="o">=</span> <span class="s2">&quot;rsync&quot;</span>
+</span><span class='line'><span class="o">[.</span><span class="n">.</span><span class="o">.]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>Now, deploy your site, let everyone see it. 现在，把你的博客上传上去把，大家就能看到拉</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake deploy
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>That&rsquo;s it. If everything goes right, you will get your blog running in both vagrant box as dev env, and EC2 as prod env. Enjoy free (for a year and no heavy traffic) blogging with OctoPress. If your blog gets popular, you probably want add Varnish in front of it, and upgrade your instance. 大功告成。如果一切都作对了的话，你的博客应该正式上线了，在vagrant的开发环境也应该OK。用OctoPress随便玩吧，一年的时间是免费的，只要你没有什么很大的流量的话。如果你的博客越来越热门了，可以考虑在前面加一个Varnish，然后升级一下instance。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Stayman Hou 侯越辰</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-10T20:56:23-04:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/aws/'>aws</a>, <a class='category' href='/blog/categories/dev/'>dev</a>, <a class='category' href='/blog/categories/ec2/'>ec2</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/vagrant/'>vagrant</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://StaymanHou.github.io/blog/2014/08/10/how-this-site-got-started-ec2-t2-dot-micro-plus-vagrant-plus-octopress/" data-via="" data-counturl="http://StaymanHou.github.io/blog/2014/08/10/how-this-site-got-started-ec2-t2-dot-micro-plus-vagrant-plus-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/25/setup-percona-cluster-with-chef/" title="Next Post: Setup Percona Cluster with Chef">Setup Percona Cluster with Chef &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/02/13/multitenancy-with-ruby-on-rails-saas/">Multitenancy With Ruby on Rails (SaaS, Subdomain, and Account) - Intro, Resources, and Benchmark</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/02/08/opencv-object-detection-tutorial-getting-started-by-training-your-own-car-detector/">OpenCV Object Detection Tutorial - Getting Started by Training Your Own Car Detector</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/02/08/visual-recognition-slash-computer-vision-as-of-feb-2016/">Visual Recognition / Computer Vision as of Feb 2016</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/14/build-your-own-search-engine-elasticsearch-vs-aws-cloudsearch-a-brief-comparison/">Build Your Own Search Engine - ElasticSearch, AWS CloudSearch and Sphinx - a Brief Comparison</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/12/some-resources-worth-checking-out-before-you-start-a-nodejs-project-part-2/">Some Resources Worth Checking Out Before You Start a NodeJS Project - Part 2</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Category Cloud</h1>
+    <span id="tag-cloud"><a href='/blog/categories/ansible' style='font-size: 103.15789473684211%'>ansible(1)</a> <a href='/blog/categories/automated-deployment' style='font-size: 103.15789473684211%'>automated deployment(1)</a> <a href='/blog/categories/aws' style='font-size: 103.15789473684211%'>aws(1)</a> <a href='/blog/categories/capistrano' style='font-size: 103.15789473684211%'>capistrano(1)</a> <a href='/blog/categories/cassandra' style='font-size: 103.15789473684211%'>cassandra(1)</a> <a href='/blog/categories/cd' style='font-size: 103.15789473684211%'>cd(1)</a> <a href='/blog/categories/chef' style='font-size: 106.3157894736842%'>chef(2)</a> <a href='/blog/categories/ci' style='font-size: 103.15789473684211%'>ci(1)</a> <a href='/blog/categories/computer-vision' style='font-size: 106.3157894736842%'>computer vision(2)</a> <a href='/blog/categories/configuration-management' style='font-size: 103.15789473684211%'>configuration management(1)</a> <a href='/blog/categories/continuous-delivery' style='font-size: 103.15789473684211%'>continuous delivery(1)</a> <a href='/blog/categories/continuous-integration' style='font-size: 103.15789473684211%'>continuous integration(1)</a> <a href='/blog/categories/continuous-monitoring' style='font-size: 103.15789473684211%'>continuous monitoring(1)</a> <a href='/blog/categories/dev' style='font-size: 103.15789473684211%'>dev(1)</a> <a href='/blog/categories/devops' style='font-size: 103.15789473684211%'>devops(1)</a> <a href='/blog/categories/docker' style='font-size: 103.15789473684211%'>docker(1)</a> <a href='/blog/categories/ec2' style='font-size: 103.15789473684211%'>ec2(1)</a> <a href='/blog/categories/fabric' style='font-size: 103.15789473684211%'>fabric(1)</a> <a href='/blog/categories/git' style='font-size: 103.15789473684211%'>git(1)</a> <a href='/blog/categories/jenkins' style='font-size: 103.15789473684211%'>jenkins(1)</a> <a href='/blog/categories/linux' style='font-size: 160.0%'>linux(19)</a> <a href='/blog/categories/multitenancy' style='font-size: 103.15789473684211%'>multitenancy(1)</a> <a href='/blog/categories/mysql' style='font-size: 103.15789473684211%'>mysql(1)</a> <a href='/blog/categories/nodejs' style='font-size: 103.15789473684211%'>nodejs(1)</a> <a href='/blog/categories/octopress' style='font-size: 103.15789473684211%'>octopress(1)</a> <a href='/blog/categories/opencv' style='font-size: 103.15789473684211%'>opencv(1)</a> <a href='/blog/categories/ops' style='font-size: 103.15789473684211%'>ops(1)</a> <a href='/blog/categories/percona' style='font-size: 103.15789473684211%'>percona(1)</a> <a href='/blog/categories/ruby-on-rails' style='font-size: 106.3157894736842%'>ruby on rails(2)</a> <a href='/blog/categories/vagrant' style='font-size: 106.3157894736842%'>vagrant(2)</a> <a href='/blog/categories/version-control' style='font-size: 103.15789473684211%'>version control(1)</a> <a href='/blog/categories/visual-recognition' style='font-size: 103.15789473684211%'>visual recognition(1)</a> </span>
+</section><section>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- aside_short -->
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:250px"
+       data-ad-client="ca-pub-4878800242778822"
+       data-ad-slot="9474256393"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/111718847796837023988?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/StaymanHou">@StaymanHou</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'StaymanHou',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- aside_long -->
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:600px"
+       data-ad-client="ca-pub-4878800242778822"
+       data-ad-slot="1950989591"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</section>
+<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=stahoublo-20&o=1&p=9&l=ez&f=ifr&f=ifr&linkID=ZG3SDYE6AX6Y6KTY" width="180" height="150" scrolling="no" marginwidth="0" marginheight="0" border="0" frameborder="0" style="border:none;"></iframe>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Stayman Hou 侯越辰 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'staymansblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://StaymanHou.github.io/blog/2014/08/10/how-this-site-got-started-ec2-t2-dot-micro-plus-vagrant-plus-octopress/';
+        var disqus_url = 'http://StaymanHou.github.io/blog/2014/08/10/how-this-site-got-started-ec2-t2-dot-micro-plus-vagrant-plus-octopress/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

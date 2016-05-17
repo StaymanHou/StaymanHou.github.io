@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>DevOps Bootcamp 2015 - Stayman's Blog</title>
+  <meta name="author" content="Stayman Hou 侯越辰">
+
+  
+  <meta name="description" content="This is a collection of all of my videos tutorials and materials in my DevOps Bootcamp 2015 DevOps Bootcamp - Playlist with all the videos Apr 13 - &hellip;">
+  <meta name="keywords" content="devops, version control, git, vagrant, docker, automated deployment, fabric, capistrano, ci, cd, continuous integration, continuous delivery, jenkins, configuration management, ansible, chef, continuous monitoring">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://StaymanHou.github.io/blog/2015/06/08/devops-bootcamp-2015">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Stayman's Blog" type="application/atom+xml">
+  
+  <script type="text/javascript">
+  window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(5),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(f){"stack"in f&&(t(1),t(4),"addEventListener"in window&&t(2),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(3),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:8,2:5,3:9,4:7,5:20,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(2);t("loader").features.stn=!0,t(1),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:6,2:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:20,2:21,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:21,2:20,ee:"QJf3ax"}],7:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:21,2:20,ee:"QJf3ax"}],8:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:21,2:20,ee:"QJf3ax"}],9:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),f=s(a),u=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new u(t);try{i.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=u.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:5,2:21,ee:"QJf3ax"}],10:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=e(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=e(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var u=0;c>u;u++)n.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:11,3:9,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],11:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,f="addEventListener",u="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[f]?(c[f]("DOMContentLoaded",o,!1),s[f]("load",n,!1)):(c[u]("onreadystatechange",r),s[u]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],20:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],21:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:20,ee:"QJf3ax"}]},{},["G9z0Bl",3,10,4]);
+  ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"0c8384869e",applicationID:"4027352",sa:1,agent:"js-agent.newrelic.com/nr-476.min.js"}
+  </script>
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53641328-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Stayman's Blog</a></h1>
+  
+    <h2>A blog belongs to a DevSecOps consultant, hacker, and entrepreneur.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:StaymanHou.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">DevOps Bootcamp 2015</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-08T19:56:40-04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This is a collection of all of my videos tutorials and materials in my DevOps Bootcamp 2015</p>
+
+<!-- more -->
+
+
+<h1>DevOps Bootcamp - <a href="https://www.youtube.com/watch?v=Rd1Y1yXn6Bk&amp;list=PLFizdQFdhI4MxHbwThKW7Z1-u1h5bi_Ao">Playlist with all the videos</a></h1>
+
+<ul>
+<li>Apr 13 - Introduction
+
+<ul>
+<li>General course information - Title, Attendant, Grading, Book, Lecture &amp; Practice</li>
+<li>DevOps What &amp; Why
+
+<ul>
+<li>Background</li>
+<li>Overview</li>
+</ul>
+</li>
+<li>Syllabus</li>
+<li>Final</li>
+<li><em>Forgot to record video</em></li>
+</ul>
+</li>
+<li>Apr 15 - Bash
+
+<ul>
+<li>DevOps &amp; This course</li>
+<li><a href="http://www.tutorialspoint.com/codingground.htm">http://www.tutorialspoint.com/codingground.htm</a></li>
+<li><a href="http://www.freeos.com/guides/lsst/">http://www.freeos.com/guides/lsst/</a></li>
+<li><a href="http://tldp.org/LDP/abs/html/exercises.html">http://tldp.org/LDP/abs/html/exercises.html</a></li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/Rd1Y1yXn6Bk " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>Apr 20 - Python
+
+<ul>
+<li><a href="https://docs.python.org/2/tutorial/">https://docs.python.org/2/tutorial/</a></li>
+<li>python exercises - <a href="http://www.codecademy.com/tracks/python">http://www.codecademy.com/tracks/python</a></li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/dfDLg90ilo " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>Apr 22 - Ruby
+
+<ul>
+<li><a href="http://www.tutorialspoint.com/ruby/index.htm">http://www.tutorialspoint.com/ruby/index.htm</a></li>
+<li>ruby exercises - <a href="http://www.codecademy.com/en/tracks/ruby">http://www.codecademy.com/en/tracks/ruby</a></li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/iNFzwMSwBIE " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>Apr 27 - Version Control - Git
+
+<ul>
+<li><a href="http://git-scm.com/doc">http://git-scm.com/doc</a></li>
+<li>branching
+
+<ul>
+<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">https://www.atlassian.com/git/tutorials/comparing-workflows</a></li>
+<li><a href="http://nvie.com/posts/a-successful-git-branching-model/">http://nvie.com/posts/a-successful-git-branching-model/</a></li>
+</ul>
+</li>
+<li>git exercises - <a href="http://gitimmersion.com/">http://gitimmersion.com/</a></li>
+<li>prepare vagrant &amp; docker
+
+<ul>
+<li>virtualbox - <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></li>
+<li>vagrant - <a href="http://docs.vagrantup.com/v2/installation/">http://docs.vagrantup.com/v2/installation/</a></li>
+<li>vagrant box
+
+<ul>
+<li><a href="https://cloud-images.ubuntu.com/vagrant/trusty/20150427/trusty-server-cloudimg-amd64-vagrant-disk1.box">https://cloud-images.ubuntu.com/vagrant/trusty/20150427/trusty-server-cloudimg-amd64-vagrant-disk1.box</a></li>
+<li><a href="https://cloud-images.ubuntu.com/vagrant/trusty/20150427/trusty-server-cloudimg-i386-vagrant-disk1.box">https://cloud-images.ubuntu.com/vagrant/trusty/20150427/trusty-server-cloudimg-i386-vagrant-disk1.box</a></li>
+</ul>
+</li>
+<li>aws account</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/iHY4smuMcnE " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>Apr 29 - Manage Environments - Vagrant &amp; Docker
+
+<ul>
+<li>Vagrant
+
+<ul>
+<li><a href="http://docs.vagrantup.com/v2/getting-started/">http://docs.vagrantup.com/v2/getting-started/</a></li>
+</ul>
+</li>
+<li>Docker
+
+<ul>
+<li>CoreOS</li>
+<li>guide - <a href="https://docs.docker.com/userguide/">https://docs.docker.com/userguide/</a>
+
+<ul>
+<li><a href="https://github.com/docker-library/docs/tree/master/mysql">https://github.com/docker-library/docs/tree/master/mysql</a></li>
+<li><a href="https://github.com/docker-library/docs/tree/master/wordpress">https://github.com/docker-library/docs/tree/master/wordpress</a></li>
+</ul>
+</li>
+<li>try it - <a href="https://www.docker.com/tryit/">https://www.docker.com/tryit/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/bM3b4e94T6Y " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>May 4 - Automated Deployment - Fabric
+
+<ul>
+<li><a href="https://github.com/StaymanHou/2015-dev-ops-sample-application">https://github.com/StaymanHou/2015-dev-ops-sample-application</a></li>
+<li><a href="http://www.fabfile.org/">http://www.fabfile.org/</a></li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/kKzlWb4Ccz0 " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>May 6 - Automated Deployment - Capistrano
+
+<ul>
+<li>capistrano - <a href="http://capistranorb.com/">http://capistranorb.com/</a></li>
+<li>sample rails app - <a href="https://github.com/StaymanHou/dev-ops-rails-sample-application">https://github.com/StaymanHou/dev-ops-rails-sample-application</a></li>
+<li>rvm - <a href="https://rvm.io/rvm/install">https://rvm.io/rvm/install</a></li>
+<li>rvm &amp; passenger - <a href="https://rvm.io/integration/passenger">https://rvm.io/integration/passenger</a></li>
+<li>ubuntu passenger nginx init.d script - <a href="https://gist.github.com/hisea/1548664">https://gist.github.com/hisea/1548664</a></li>
+<li>security group,key pair,iam</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/jPHIVHVmVs8 " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>May 11 - Continuous Integration - Git &amp; Jenkins
+
+<ul>
+<li>recall git branching strategy - <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow">https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow</a></li>
+<li>CI - <a href="http://www.slideshare.net/drluckyspin/continuous-integration">http://www.slideshare.net/drluckyspin/continuous-integration</a></li>
+<li><a href="http://www.thoughtworks.com/continuous-integration">http://www.thoughtworks.com/continuous-integration</a></li>
+<li><a href="https://getcomposer.org/">https://getcomposer.org/</a></li>
+<li><a href="https://phpunit.de/">https://phpunit.de/</a></li>
+<li><a href="https://jenkins-ci.org/">https://jenkins-ci.org/</a></li>
+<li><em>Forgot to record video</em></li>
+</ul>
+</li>
+<li>May 13 - Continuous Delivery - Jenkins
+
+<ul>
+<li><a href="http://www.slideshare.net/wakaleo/automated-acceptance-testing-and-continuous-delivery">http://www.slideshare.net/wakaleo/automated-acceptance-testing-and-continuous-delivery</a></li>
+<li>DB migration</li>
+<li><a href="https://phinx.org/">https://phinx.org/</a></li>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Build+Pipeline+Plugin">https://wiki.jenkins-ci.org/display/JENKINS/Build+Pipeline+Plugin</a></li>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Delivery+Pipeline+Plugin">https://wiki.jenkins-ci.org/display/JENKINS/Delivery+Pipeline+Plugin</a></li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/D_MCcgmMigo " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>May 18 - Configuration Management - Ansible
+
+<ul>
+<li><a href="http://www.slideshare.net/danilop/infrastructure-as-code-manage-your-architecture-with-git">http://www.slideshare.net/danilop/infrastructure-as-code-manage-your-architecture-with-git</a></li>
+<li><a href="http://www.slideshare.net/johnthethird/ansible-presentation-24942953">http://www.slideshare.net/johnthethird/ansible-presentation-24942953</a></li>
+<li><a href="http://docs.ansible.com/index.html">http://docs.ansible.com/index.html</a></li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/ODZ4K0oJojc " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>May 20 - Configuration Management - Ansible (Cont.)
+
+<ul>
+<li><a href="https://galaxy.ansible.com/">https://galaxy.ansible.com/</a></li>
+<li><a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple">https://github.com/ansible/ansible-examples/tree/master/lamp_simple</a></li>
+<li><a href="https://github.com/StaymanHou/2015-dev-ops-sample-ansible">https://github.com/StaymanHou/2015-dev-ops-sample-ansible</a></li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/qXnZhdrhd_M " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>May 27 - Configuration Management - Chef
+
+<ul>
+<li><a href="https://learn.chef.io">https://learn.chef.io</a></li>
+<li><a href="http://docs.chef.io">http://docs.chef.io</a></li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/AaPjO-3jcxI " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>Jun 1 - Configuration Management - Chef - ChefDK, Test Kitchen, ChefSpec &amp; ServerSpec
+
+<ul>
+<li>Chef basic review - <a href="http://i.ytimg.com/vi/2BCNpHNZzy8/maxresdefault.jpg">http://i.ytimg.com/vi/2BCNpHNZzy8/maxresdefault.jpg</a></li>
+<li>ChefDK - <a href="https://downloads.chef.io/chef-dk/">https://downloads.chef.io/chef-dk/</a></li>
+<li>Test Kitchen - <a href="http://kitchen.ci/">http://kitchen.ci/</a></li>
+<li>Test Kitchen Drivers
+
+<ul>
+<li>EC2 - <a href="https://github.com/test-kitchen/kitchen-ec2">https://github.com/test-kitchen/kitchen-ec2</a></li>
+<li>Vagrant - <a href="https://github.com/test-kitchen/kitchen-vagrant">https://github.com/test-kitchen/kitchen-vagrant</a></li>
+<li>Docker - <a href="https://github.com/portertech/kitchen-docker">https://github.com/portertech/kitchen-docker</a></li>
+</ul>
+</li>
+<li>ServerSpec - <a href="http://serverspec.org/">http://serverspec.org/</a>
+
+<ul>
+<li><a href="http://kitchen-ci.org/docs/getting-started/writing-server-test">http://kitchen-ci.org/docs/getting-started/writing-server-test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/plGIuYBWdj8 " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>Jun 3 - Final Project Overview &amp; Chef (Cont.?)
+
+<ul>
+<li>ChefSpec - <a href="https://github.com/sethvargo/chefspec">https://github.com/sethvargo/chefspec</a>
+
+<ul>
+<li>Knife Spec - <a href="https://github.com/sethvargo/knife-spec">https://github.com/sethvargo/knife-spec</a></li>
+</ul>
+</li>
+<li>antipatterns - <a href="http://www.slideshare.net/JulianDunn/beginner-chef-antipatterns">http://www.slideshare.net/JulianDunn/beginner-chef-antipatterns</a></li>
+</ul>
+</li>
+</ul>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/aNshyQAlKFk " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<ul>
+<li>Jun 8 - Continuous Monitoring &amp; Trouble Shooting - Collectd / StatsD / Graphite / DataDog / NewRelic / ELK Stack
+
+<ul>
+<li>Collectd
+
+<ul>
+<li><a href="https://collectd.org/">https://collectd.org/</a></li>
+<li><a href="https://collectd.org/wiki/index.php/Table_of_Plugins">https://collectd.org/wiki/index.php/Table_of_Plugins</a></li>
+<li><a href="https://github.com/coderanger/chef-collectd">https://github.com/coderanger/chef-collectd</a></li>
+</ul>
+</li>
+<li>StatsD
+
+<ul>
+<li><a href="https://github.com/etsy/statsd">https://github.com/etsy/statsd</a></li>
+<li><a href="https://github.com/domnikl/statsd-php">https://github.com/domnikl/statsd-php</a></li>
+<li><a href="https://github.com/Shopify/statsd-instrument">https://github.com/Shopify/statsd-instrument</a></li>
+<li><a href="https://github.com/tim-group/java-statsd-client">https://github.com/tim-group/java-statsd-client</a></li>
+<li><a href="https://github.com/librato/statsd-cookbook">https://github.com/librato/statsd-cookbook</a></li>
+</ul>
+</li>
+<li>Graphite
+
+<ul>
+<li><a href="http://graphite.wikidot.com/high-level-diagram">http://graphite.wikidot.com/high-level-diagram</a></li>
+<li><a href="http://graphite.wikidot.com/screen-shots">http://graphite.wikidot.com/screen-shots</a></li>
+<li><a href="https://github.com/hw-cookbooks/graphite">https://github.com/hw-cookbooks/graphite</a></li>
+</ul>
+</li>
+<li>DataDog
+
+<ul>
+<li><a href="https://www.datadoghq.com/">https://www.datadoghq.com/</a></li>
+</ul>
+</li>
+<li>NewRelic
+
+<ul>
+<li><a href="http://newrelic.com/application-monitoring">http://newrelic.com/application-monitoring</a></li>
+</ul>
+</li>
+<li>ELK
+
+<ul>
+<li><a href="https://www.elastic.co/products">https://www.elastic.co/products</a></li>
+<li>loggly / papertrail / splunk</li>
+</ul>
+</li>
+<li>_No video record</li>
+</ul>
+</li>
+<li>Jun 15 - Final &amp; Review
+
+<ul>
+<li><a href="https://github.com/showcases/devops-tools">https://github.com/showcases/devops-tools</a></li>
+</ul>
+</li>
+<li>Final Project Requirement
+
+<ul>
+<li>dev environment - Vagrant / Docker</li>
+<li>2 web nodes</li>
+<li>1 db node</li>
+<li>1 Git server / GitHub / BitBucket / etc</li>
+<li>1 Jenkins server + Fabric / Capistrano + Chef workstation / Ansible workstation</li>
+<li>1 Chef server (Optional)</li>
+<li>Automated Deployment</li>
+<li>CI / CD pipeline</li>
+<li>Configuration Management</li>
+<li>10 min presentation</li>
+</ul>
+</li>
+<li>Final Project Bonus
+
+<ul>
+<li>Extract app DB info from the application code</li>
+<li>Application programming language is not PHP</li>
+<li>Jenkins authentication setup</li>
+<li>Jenkins pretty test report</li>
+<li>UI test / Lint test / Static analysis / etc&hellip;</li>
+<li>Blue green deployment</li>
+<li>Ansible Dynamic Inventory</li>
+<li>Utilize Chef</li>
+<li>Monitoring stack</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Stayman Hou 侯越辰</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-08T19:56:40-04:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ansible/'>ansible</a>, <a class='category' href='/blog/categories/automated-deployment/'>automated deployment</a>, <a class='category' href='/blog/categories/capistrano/'>capistrano</a>, <a class='category' href='/blog/categories/cd/'>cd</a>, <a class='category' href='/blog/categories/chef/'>chef</a>, <a class='category' href='/blog/categories/ci/'>ci</a>, <a class='category' href='/blog/categories/configuration-management/'>configuration management</a>, <a class='category' href='/blog/categories/continuous-delivery/'>continuous delivery</a>, <a class='category' href='/blog/categories/continuous-integration/'>continuous integration</a>, <a class='category' href='/blog/categories/continuous-monitoring/'>continuous monitoring</a>, <a class='category' href='/blog/categories/devops/'>devops</a>, <a class='category' href='/blog/categories/docker/'>docker</a>, <a class='category' href='/blog/categories/fabric/'>fabric</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/jenkins/'>jenkins</a>, <a class='category' href='/blog/categories/vagrant/'>vagrant</a>, <a class='category' href='/blog/categories/version-control/'>version control</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://StaymanHou.github.io/blog/2015/06/08/devops-bootcamp-2015/" data-via="" data-counturl="http://StaymanHou.github.io/blog/2015/06/08/devops-bootcamp-2015/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/11/30/a-naive-benchmark-for-a-click-count-application-nodejs-plus-cassandra-vs-ror-plus-mysql/" title="Previous Post: A naive benchmark for a click count application: NodeJS + Cassandra VS ROR + MySQL 简单性能对比（基于一个点击计数应用）">&laquo; A naive benchmark for a click count application: NodeJS + Cassandra VS ROR + MySQL 简单性能对比（基于一个点击计数应用）</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/09/06/some-resources-worth-checking-out-before-you-start-a-nodejs-project/" title="Next Post: Some resources worth checking out before you start a NodeJS project - Part 1">Some resources worth checking out before you start a NodeJS project - Part 1 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/02/13/multitenancy-with-ruby-on-rails-saas/">Multitenancy With Ruby on Rails (SaaS, Subdomain, and Account) - Intro, Resources, and Benchmark</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/02/08/opencv-object-detection-tutorial-getting-started-by-training-your-own-car-detector/">OpenCV Object Detection Tutorial - Getting Started by Training Your Own Car Detector</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/02/08/visual-recognition-slash-computer-vision-as-of-feb-2016/">Visual Recognition / Computer Vision as of Feb 2016</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/14/build-your-own-search-engine-elasticsearch-vs-aws-cloudsearch-a-brief-comparison/">Build Your Own Search Engine - ElasticSearch, AWS CloudSearch and Sphinx - a Brief Comparison</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/12/some-resources-worth-checking-out-before-you-start-a-nodejs-project-part-2/">Some Resources Worth Checking Out Before You Start a NodeJS Project - Part 2</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Category Cloud</h1>
+    <span id="tag-cloud"><a href='/blog/categories/ansible' style='font-size: 103.15789473684211%'>ansible(1)</a> <a href='/blog/categories/automated-deployment' style='font-size: 103.15789473684211%'>automated deployment(1)</a> <a href='/blog/categories/aws' style='font-size: 103.15789473684211%'>aws(1)</a> <a href='/blog/categories/capistrano' style='font-size: 103.15789473684211%'>capistrano(1)</a> <a href='/blog/categories/cassandra' style='font-size: 103.15789473684211%'>cassandra(1)</a> <a href='/blog/categories/cd' style='font-size: 103.15789473684211%'>cd(1)</a> <a href='/blog/categories/chef' style='font-size: 106.3157894736842%'>chef(2)</a> <a href='/blog/categories/ci' style='font-size: 103.15789473684211%'>ci(1)</a> <a href='/blog/categories/computer-vision' style='font-size: 106.3157894736842%'>computer vision(2)</a> <a href='/blog/categories/configuration-management' style='font-size: 103.15789473684211%'>configuration management(1)</a> <a href='/blog/categories/continuous-delivery' style='font-size: 103.15789473684211%'>continuous delivery(1)</a> <a href='/blog/categories/continuous-integration' style='font-size: 103.15789473684211%'>continuous integration(1)</a> <a href='/blog/categories/continuous-monitoring' style='font-size: 103.15789473684211%'>continuous monitoring(1)</a> <a href='/blog/categories/dev' style='font-size: 103.15789473684211%'>dev(1)</a> <a href='/blog/categories/devops' style='font-size: 103.15789473684211%'>devops(1)</a> <a href='/blog/categories/docker' style='font-size: 103.15789473684211%'>docker(1)</a> <a href='/blog/categories/ec2' style='font-size: 103.15789473684211%'>ec2(1)</a> <a href='/blog/categories/fabric' style='font-size: 103.15789473684211%'>fabric(1)</a> <a href='/blog/categories/git' style='font-size: 103.15789473684211%'>git(1)</a> <a href='/blog/categories/jenkins' style='font-size: 103.15789473684211%'>jenkins(1)</a> <a href='/blog/categories/linux' style='font-size: 160.0%'>linux(19)</a> <a href='/blog/categories/multitenancy' style='font-size: 103.15789473684211%'>multitenancy(1)</a> <a href='/blog/categories/mysql' style='font-size: 103.15789473684211%'>mysql(1)</a> <a href='/blog/categories/nodejs' style='font-size: 103.15789473684211%'>nodejs(1)</a> <a href='/blog/categories/octopress' style='font-size: 103.15789473684211%'>octopress(1)</a> <a href='/blog/categories/opencv' style='font-size: 103.15789473684211%'>opencv(1)</a> <a href='/blog/categories/ops' style='font-size: 103.15789473684211%'>ops(1)</a> <a href='/blog/categories/percona' style='font-size: 103.15789473684211%'>percona(1)</a> <a href='/blog/categories/ruby-on-rails' style='font-size: 106.3157894736842%'>ruby on rails(2)</a> <a href='/blog/categories/vagrant' style='font-size: 106.3157894736842%'>vagrant(2)</a> <a href='/blog/categories/version-control' style='font-size: 103.15789473684211%'>version control(1)</a> <a href='/blog/categories/visual-recognition' style='font-size: 103.15789473684211%'>visual recognition(1)</a> </span>
+</section><section>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- aside_short -->
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:250px"
+       data-ad-client="ca-pub-4878800242778822"
+       data-ad-slot="9474256393"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</section>
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/111718847796837023988?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/StaymanHou">@StaymanHou</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'StaymanHou',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- aside_long -->
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:300px;height:600px"
+       data-ad-client="ca-pub-4878800242778822"
+       data-ad-slot="1950989591"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</section>
+<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=stahoublo-20&o=1&p=9&l=ez&f=ifr&f=ifr&linkID=ZG3SDYE6AX6Y6KTY" width="180" height="150" scrolling="no" marginwidth="0" marginheight="0" border="0" frameborder="0" style="border:none;"></iframe>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Stayman Hou 侯越辰 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'staymansblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://StaymanHou.github.io/blog/2015/06/08/devops-bootcamp-2015/';
+        var disqus_url = 'http://StaymanHou.github.io/blog/2015/06/08/devops-bootcamp-2015/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
